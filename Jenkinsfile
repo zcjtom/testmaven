@@ -43,6 +43,8 @@ pipeline {
                 echo "deploy ......"
                 echo "deploy ......"
                 echo "deploy ......"
+                echo "deploy ......"
+                echo "deploy ......"
             }
         }
     }
