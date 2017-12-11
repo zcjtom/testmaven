@@ -2,9 +2,9 @@ pipeline {
     agent any
     stages {
         //定义mvn环境
-        def mvnHome = tool 'maven_3.1.1'
-        env.PATH = "${mvnHome}/bin:${env.PATH}"
-        env.JAVA_HOME = tool 'JDK_1.8'
+        // def mvnHome = tool 'maven_3.1.1'
+        // env.PATH = "${mvnHome}/bin:${env.PATH}"
+        // env.JAVA_HOME = tool 'JDK_1.8'
         
         stage('get clone') {
             steps {
