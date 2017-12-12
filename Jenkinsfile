@@ -28,11 +28,11 @@ pipeline {
             }
         }
         
-        stage('Sanity check') {
-            steps {
-                //input "Does the staging mvn test ok?"
-            }
-        }
+        //stage('Sanity check') {
+        //    steps {
+        //        input "Does the staging mvn test ok?"
+        //    }
+        //}
         
         stage('mvn build') {
             steps {
