@@ -1,7 +1,10 @@
 pipeline {
     agent { 
-        docker 'maven:3.3.3' 
-        args '-v ~/.m2:~/.m2'
+        docker {
+            image 'maven:3.3.3' 
+            label 'my-defined-label'
+            args '-v ~/.m2:~/.m2'
+        }
     }
     stages {
         stage('mvn test') {
