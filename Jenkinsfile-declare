@@ -6,7 +6,7 @@ pipeline {
     }
     
     stages {
-        //定义mvn环境
+        //瀹氫箟mvn鐜
         // def mvnHome = tool 'maven_3.1.1'
         // env.PATH = "${mvnHome}/bin:${env.PATH}"
         // env.JAVA_HOME = tool 'JDK_1.8'
@@ -31,7 +31,7 @@ pipeline {
         stage('mvn test') {
             steps {
                 withMaven(maven: 'maven_3.3.9') {
-                    //mvn 测试
+                    //mvn 娴嬭瘯
                     sh "mvn test"
                 }
             }
@@ -40,7 +40,7 @@ pipeline {
         stage('mvn build') {
             steps {
                 withMaven(maven: 'maven_3.3.9') {
-                    //mvn构建
+                    //mvn鏋勫缓
                     sh "mvn clean install -Dmaven.test.skip=true"
                 }
             }
@@ -48,10 +48,10 @@ pipeline {
 
         stage('deploy') {
             steps {
-                //执行部署脚本
+                //鎵ц閮ㄧ讲鑴氭湰
                 echo "deploy ......"
                 sh '''
-                    echo "deploy1 ......"
+                    echo "deploy12 ......"
                     echo "deploy1 ......"
                     echo "deploy1 ......"
                     echo "deploy1 ......"
