@@ -9,15 +9,11 @@ pipeline {
     stages {
         stage('mvn test') {
             steps {
-                sh "mvn test"
+                echo "mvn test"
             }
         }
         
         stage('Parallel Stage') {
-            when {
-                branch 'master'
-            }
-            failFast true
             parallel {
                 stage('Branch A') {
                     agent {
@@ -47,7 +43,7 @@ pipeline {
         stage('mvn build') {
             steps {
                 //mvn¹¹½¨
-                sh "mvn clean install -Dmaven.test.skip=true"
+                echo "mvn clean install -Dmaven.test.skip=true"
             }
         }
         
