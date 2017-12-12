@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'maven:3.3.3' 
             label 'master'
-            args '-v ~/.m2:~/.m2'
+            args '-v /root/.m2:/root/.m2'
         }
     }
     stages {
