@@ -1,5 +1,5 @@
 node('master') {
-	//定义mvn环境
+	//瀹氫箟mvn鐜
 	def mvnHome = tool 'maven_3.1.1'
     env.PATH = "${mvnHome}/bin:${env.PATH}"
     env.JAVA_HOME = tool 'JDK_1.8'
@@ -20,18 +20,18 @@ node('master') {
 	}
 
     stage('mvn test') {
-        //mvn 测试
+        //mvn 娴嬭瘯
         sh "mvn test"
 	}
 
 	stage('mvn build') {
-		//mvn构建
+		//mvn鏋勫缓
 		sh "mvn clean install -Dmaven.test.skip=true"
 	}
 
 	stage('deploy') {
-		//执行部署脚本
-		echo "deploy ......"
+		//鎵ц閮ㄧ讲鑴氭湰
+		echo "deploy 2......"
 		echo "deploy ......"
 		echo "deploy ......"
 	}
