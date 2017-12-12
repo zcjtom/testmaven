@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('mvn test') {
             steps {
-                echo "mvn install -Dmaven.test.skip=true"
+                sh "mvn test"
             }
         }
         
@@ -43,9 +43,7 @@ pipeline {
         stage('mvn build') {
             steps {
                 //mvn¹¹½¨
-                echo "mvn clean install -Dmaven.test.skip=true"
-                echo "mvn clean install -Dmaven.test.skip=true"
-                echo "mvn clean install -Dmaven.test.skip=true"
+                sh "mvn install -Dmaven.test.skip=true"
             }
         }
         
