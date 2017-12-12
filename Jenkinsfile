@@ -6,10 +6,17 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
+    
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
+    
     stages {
         stage('mvn test') {
             steps {
                 echo "mvn install -Dmaven.test.skip=true"
+                echo '$DB_ENGINE'
             }
         }
         
