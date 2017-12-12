@@ -16,9 +16,6 @@ pipeline {
         stage('mvn test') {
             steps {
                 echo "mvn install -Dmaven.test.skip=true"
-                echo '$JAVA_HOME'
-                echo "$JAVA_HOME"
-                echo "$DB_ENGINE"
             }
         }
         
@@ -68,6 +65,8 @@ pipeline {
     
     post {
         always {
+            junit '**/target/surefire-reports/TEST-*.xml'
+            archive 'target/*.jar'
             echo 'This will always run'
         }
         success {
