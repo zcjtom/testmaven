@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('mvn test') {
             steps {
+                sh 'ping www.baidu.com'
                 sh "mvn test"
             }
         }
