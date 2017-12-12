@@ -13,23 +13,15 @@ pipeline {
             }
         }
         
-        stage('Parallel Stage') {
-            parallel {
-                stage('Branch A') {
-                    agent {
-                        label "master"
-                    }
-                    steps {
-                        echo "On Branch A"
-                    }
+        parallel {
+            stage('Branch A') {
+                steps {
+                    echo "On Branch A"
                 }
-                stage('Branch B') {
-                    agent {
-                        label "master"
-                    }
-                    steps {
-                        echo "On Branch B"
-                    }
+            }
+            stage('Branch B') {
+                steps {
+                    echo "On Branch B"
                 }
             }
         }
