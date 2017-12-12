@@ -9,14 +9,15 @@ pipeline {
     
     environment {
         DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
+        DB_ENGINE    = 'sqlite1'
     }
     
     stages {
         stage('mvn test') {
             steps {
                 echo "mvn install -Dmaven.test.skip=true"
-                echo '$JAVA_HOME'
+                echo "$JAVA_HOME"
+                echo "$DB_ENGINE"
             }
         }
         
