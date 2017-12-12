@@ -50,10 +50,12 @@ pipeline {
             steps {
                 //Ö´ÐÐ²¿Êð½Å±¾
                 echo "deploy ......"
-                echo "deploy ......"
-                echo "deploy ......"
-                echo "deploy ......"
-                echo "deploy ......"
+                sh '''
+                    echo "deploy1 ......"
+                    echo "deploy1 ......"
+                    echo "deploy1 ......"
+                    echo "deploy1 ......"
+                '''
             }
         }
         
