@@ -2,7 +2,7 @@ pipeline {
     agent { 
         docker {
             image 'maven:3.3.3' 
-            label 'my-defined-label'
+            label 'master'
             args '-v ~/.m2:~/.m2'
         }
     }
