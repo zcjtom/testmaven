@@ -16,6 +16,7 @@ pipeline {
         stage('mvn test') {
             steps {
                 echo "mvn install -Dmaven.test.skip=true"
+                echo '$JAVA_HOME'
                 echo "$JAVA_HOME"
                 echo "$DB_ENGINE"
             }
