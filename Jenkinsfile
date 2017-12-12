@@ -13,6 +13,31 @@ pipeline {
             }
         }
         
+        stage('Parallel Stage') {
+            when {
+                branch 'master'
+            }
+            failFast true
+            parallel {
+                stage('Branch A') {
+                    agent {
+                        label "master"
+                    }
+                    steps {
+                        echo "On Branch A"
+                    }
+                }
+                stage('Branch B') {
+                    agent {
+                        label "master"
+                    }
+                    steps {
+                        echo "On Branch B"
+                    }
+                }
+            }
+        }
+        
         stage('Sanity check') {
             steps {
                 input "Does the staging mvn test ok?"
