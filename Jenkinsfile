@@ -30,7 +30,7 @@ pipeline {
         
         stage('Sanity check') {
             steps {
-                input "Does the staging mvn test ok?"
+                //input "Does the staging mvn test ok?"
             }
         }
         
