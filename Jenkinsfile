@@ -30,15 +30,19 @@ pipeline {
 
         stage('mvn test') {
             steps {
-                //mvn 测试
-                sh "mvn test"
+                withMaven(maven: 'maven_3.3.9') {
+                    //mvn 测试
+                    sh "mvn test"
+                }
             }
         }
 
         stage('mvn build') {
             steps {
-                //mvn构建
-                sh "mvn clean install -Dmaven.test.skip=true"
+                withMaven(maven: 'maven_3.3.9') {
+                    //mvn构建
+                    sh "mvn clean install -Dmaven.test.skip=true"
+                }
             }
         }
 
