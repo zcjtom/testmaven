@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        M2_HOME = '/home/ubuntu/maven/apache-maven-3.3.9'
+        M2_HOME = '/var/jenkins_home/support_tool/maven/apache-maven-3.3.9'
     }
     
     stages {
