@@ -38,6 +38,8 @@ pipeline {
             steps {
                 //mvn¹¹½¨
                 echo "mvn clean install -Dmaven.test.skip=true"
+                echo "mvn clean install -Dmaven.test.skip=true"
+                echo "mvn clean install -Dmaven.test.skip=true"
             }
         }
         
